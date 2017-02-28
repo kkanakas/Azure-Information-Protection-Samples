@@ -1,7 +1,9 @@
 ﻿using System;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.InformationProtectionAndControl;
+using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Win32;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -10,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Specialized;
+using System.Collections.ObjectModel;
 
 namespace SelectFileandEncryptForm
 {
@@ -61,36 +64,47 @@ namespace SelectFileandEncryptForm
         private void templateListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             SafeNativeMethods.IpcInitialize();
-            private string CLIENT_ID = clientidBox.Text;
-
-        var currentAdal = new currentAdalAuth
+            var currentAdal = new currentAdalAuth
             {
                 username = usernameBox.Text,
                 password = passwordBox.Text
             };
-
-            // OAUTH2 callback setup
+            string CLIENT_ID = clientidBox.Text;
             _callbackContext = new Lazy<OAuth2CallbackContext>(() =>
             {
-                return new OAuth2CallbackContext(null,
-                    (object context, NameValueCollection authSettings) =>
-                    {
-                        var authContext = new AuthenticationContext(authSettings["authorization"], null);
-                        var authResult = authContext.AcquireTokenAsync(authSettings["resource"],
-                                CLIENT_ID,
-                                new UserPasswordCredential(currentAdal.username, currentAdal.password));
-                        return SafeNativeMethods.IpcCreateOAuth2Token(authResult.Result.AccessToken);
-                    });
+                return new OAuth2CallbackContext(null, (object context, NameValueCollection authSettings) =>
+                 {
+                     var authContext = new AuthenticationContext(authSettings["authorization"], null);
+                     var authResult = authContext.AcquireTokenAsync(authSettings["resource"], CLIENT_ID.Trim(),
+                         new UserPasswordCredential(currentAdal.username.Trim(), currentAdal.password.Trim()));
+                     return SafeNativeMethods.IpcCreateOAuth2Token(authResult.Result.AccessToken);
+                 });
             });
 
+            Collection<TemplateInfo> templates = SafeNativeMethods.IpcGetTemplateList(null, false, true, false, true, null, null, CredentialInfo);
+            for (int i=0; i < templates.Count; i++)
+            {
+                //templateListBox.Items.Add(templates.ElementAt(i));
+                MessageBox.Show(templates.ElementAt(i).Name);
+            }
+
+
+
+
+
         }
+
+        private static object credentialInfo;
+        private static Object getCredentialLock = new Object();
+        private static Lazy<OAuth2CallbackContext> _callbackContext;
+
         private static object CredentialInfo
         {
             get
             {
                 lock (getCredentialLock)
                 {
-                    if (credentialInfo == null)
+                    if (CredentialInfo == null)
                     {
                         credentialInfo = GetADALAuthCallback();
                     }
@@ -102,12 +116,14 @@ namespace SelectFileandEncryptForm
                 credentialInfo = value;
             }
         }
-
-
         private static object GetADALAuthCallback()
         {
             return _callbackContext != null ? _callbackContext.Value : null;
         }
+
+        
+        
+        
     }
 
     public class currentAdalAuth
