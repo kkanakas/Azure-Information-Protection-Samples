@@ -39,6 +39,7 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.clientid = new System.Windows.Forms.Label();
             this.clientidBox = new System.Windows.Forms.TextBox();
+            this.getTemplateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // filePath
@@ -118,6 +119,7 @@
             this.exitButton.TabIndex = 8;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click_1);
             // 
             // clientid
             // 
@@ -135,11 +137,22 @@
             this.clientidBox.Size = new System.Drawing.Size(306, 20);
             this.clientidBox.TabIndex = 10;
             // 
+            // getTemplateButton
+            // 
+            this.getTemplateButton.Location = new System.Drawing.Point(544, 96);
+            this.getTemplateButton.Name = "getTemplateButton";
+            this.getTemplateButton.Size = new System.Drawing.Size(119, 36);
+            this.getTemplateButton.TabIndex = 11;
+            this.getTemplateButton.Text = "Get Templates";
+            this.getTemplateButton.UseVisualStyleBackColor = true;
+            this.getTemplateButton.Click += new System.EventHandler(this.getTemplateButton_Click);
+            // 
             // fileEncrypt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 276);
+            this.Controls.Add(this.getTemplateButton);
             this.Controls.Add(this.clientidBox);
             this.Controls.Add(this.clientid);
             this.Controls.Add(this.exitButton);
@@ -171,6 +184,7 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label clientid;
         private System.Windows.Forms.TextBox clientidBox;
+        private System.Windows.Forms.Button getTemplateButton;
     }
 }
 
