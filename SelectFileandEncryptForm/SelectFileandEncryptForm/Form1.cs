@@ -84,8 +84,8 @@ namespace SelectFileandEncryptForm
             Collection<TemplateInfo> templates = SafeNativeMethods.IpcGetTemplateList(null, false, true, false, true, null, null, CredentialInfo);
             for (int i=0; i < templates.Count; i++)
             {
-                //templateListBox.Items.Add(templates.ElementAt(i));
-                MessageBox.Show(templates.ElementAt(i).Name);
+                templateListBox.Items.Add(templates.ElementAt(i));
+                //MessageBox.Show(templates.ElementAt(i).Name);
             }
 
 
