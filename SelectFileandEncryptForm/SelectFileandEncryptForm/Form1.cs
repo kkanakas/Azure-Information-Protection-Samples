@@ -116,6 +116,11 @@ namespace SelectFileandEncryptForm
             });
 
             Collection<TemplateInfo> templates = SafeNativeMethods.IpcGetTemplateList(null, false, true, false, true, null, null, CredentialInfo);
+            if (templates.Count() == 0 )
+            {
+                MessageBox.Show("Templates did not load ");
+                Application.Exit();
+            }
             for (int i = 0; i < templates.Count; i++)
             {
                 templateListBox.Items.Add(templates.ElementAt(i));
