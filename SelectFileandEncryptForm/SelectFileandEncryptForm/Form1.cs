@@ -56,37 +56,11 @@ namespace SelectFileandEncryptForm
 
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
         private void templateListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SafeNativeMethods.IpcInitialize();
-            var currentAdal = new currentAdalAuth
-            {
-                username = usernameBox.Text,
-                password = passwordBox.Text
-            };
-            string CLIENT_ID = clientidBox.Text;
-            _callbackContext = new Lazy<OAuth2CallbackContext>(() =>
-            {
-                return new OAuth2CallbackContext(null, (object context, NameValueCollection authSettings) =>
-                 {
-                     var authContext = new AuthenticationContext(authSettings["authorization"], null);
-                     var authResult = authContext.AcquireTokenAsync(authSettings["resource"], CLIENT_ID.Trim(),
-                         new UserPasswordCredential(currentAdal.username.Trim(), currentAdal.password.Trim()));
-                     return SafeNativeMethods.IpcCreateOAuth2Token(authResult.Result.AccessToken);
-                 });
-            });
-
-            Collection<TemplateInfo> templates = SafeNativeMethods.IpcGetTemplateList(null, false, true, false, true, null, null, CredentialInfo);
-            for (int i=0; i < templates.Count; i++)
-            {
-                templateListBox.Items.Add(templates.ElementAt(i));
-                //MessageBox.Show(templates.ElementAt(i).Name);
-            }
+            
 
 
 
@@ -121,9 +95,39 @@ namespace SelectFileandEncryptForm
             return _callbackContext != null ? _callbackContext.Value : null;
         }
 
-        
-        
-        
+        private void getTemplateButton_Click(object sender, EventArgs e)
+        {
+            SafeNativeMethods.IpcInitialize();
+            var currentAdal = new currentAdalAuth
+            {
+                username = usernameBox.Text,
+                password = passwordBox.Text
+            };
+            string CLIENT_ID = clientidBox.Text;
+            _callbackContext = new Lazy<OAuth2CallbackContext>(() =>
+            {
+                return new OAuth2CallbackContext(null, (object context, NameValueCollection authSettings) =>
+                {
+                    var authContext = new AuthenticationContext(authSettings["authorization"], null);
+                    var authResult = authContext.AcquireTokenAsync(authSettings["resource"], CLIENT_ID.Trim(),
+                        new UserPasswordCredential(currentAdal.username.Trim(), currentAdal.password.Trim()));
+                    return SafeNativeMethods.IpcCreateOAuth2Token(authResult.Result.AccessToken);
+                });
+            });
+
+            Collection<TemplateInfo> templates = SafeNativeMethods.IpcGetTemplateList(null, false, true, false, true, null, null, CredentialInfo);
+            for (int i = 0; i < templates.Count; i++)
+            {
+                templateListBox.Items.Add(templates.ElementAt(i));
+                //MessageBox.Show(templates.ElementAt(i).Name);
+            }
+
+        }
+
+        private void exitButton_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
     public class currentAdalAuth
