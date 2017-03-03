@@ -120,9 +120,6 @@ namespace SelectFileandEncryptForm
                 }
 
             }
-
-
-            
           
         }
 
