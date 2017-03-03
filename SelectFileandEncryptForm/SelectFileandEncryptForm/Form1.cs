@@ -60,26 +60,32 @@ namespace SelectFileandEncryptForm
 
         private void selectFileButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            openFileDialog1.Filter = "Office Files (*.docx,*.xlsx,*.pptx)|*.docx;*.xlsx;*.pptx|Text Files (*.txt)|*.txt|pdf files (*.pdf)|*.pdf|All Files (*.*)|*.*";
-            openFileDialog1.FilterIndex = 1;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
             {
-
+                openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                openFileDialog1.Filter = "Office Files (*.docx,*.xlsx,*.pptx)|*.docx;*.xlsx;*.pptx|Text Files (*.txt)|*.txt|pdf files (*.pdf)|*.pdf|All Files (*.*)|*.*";
+                openFileDialog1.FilterIndex = 1;
+                openFileDialog1.RestoreDirectory = true;
                 try
                 {
-                    if (openFileDialog1.OpenFile() != null)
+                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
                     {
+
+
+
                         filePath.Text = openFileDialog1.FileName;
-                       
+
+
+
+
+                    
                     }
-                }
+            }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: selected file has an error" + ex.Message);
                 }
+
             }
         }
 
