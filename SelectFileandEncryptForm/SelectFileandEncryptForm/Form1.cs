@@ -160,7 +160,7 @@ namespace SelectFileandEncryptForm
             if (templates.Count() == 0)
             {
                 MessageBox.Show("Templates did not load. Please check your credentials ");
-               Application.Restart();
+               
             } 
             else
             {
