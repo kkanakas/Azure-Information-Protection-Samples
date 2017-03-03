@@ -6,7 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -57,6 +57,7 @@
             this.templateListBox.Name = "templateListBox";
             this.templateListBox.Size = new System.Drawing.Size(485, 21);
             this.templateListBox.TabIndex = 9;
+            this.templateListBox.Text = "Press Get Templates button to populate this list and then select the template";
             // 
             // selectFileButton
             // 
@@ -83,7 +84,7 @@
             this.userName.AutoSize = true;
             this.userName.Location = new System.Drawing.Point(12, 55);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(60, 13);
+            this.userName.Size = new System.Drawing.Size(70, 15);
             this.userName.TabIndex = 2;
             this.userName.Text = "User Name";
             // 
@@ -99,7 +100,7 @@
             this.password.AutoSize = true;
             this.password.Location = new System.Drawing.Point(15, 83);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(53, 13);
+            this.password.Size = new System.Drawing.Size(61, 15);
             this.password.TabIndex = 4;
             this.password.Text = "Password";
             // 
@@ -110,6 +111,7 @@
             this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(307, 20);
             this.passwordBox.TabIndex = 5;
+            this.passwordBox.UseSystemPasswordChar = true;
             // 
             // exitButton
             // 
@@ -126,7 +128,7 @@
             this.clientid.AutoSize = true;
             this.clientid.Location = new System.Drawing.Point(15, 116);
             this.clientid.Name = "clientid";
-            this.clientid.Size = new System.Drawing.Size(47, 13);
+            this.clientid.Size = new System.Drawing.Size(53, 15);
             this.clientid.TabIndex = 6;
             this.clientid.Text = "Client ID";
             // 
@@ -186,5 +188,10 @@
         private System.Windows.Forms.TextBox clientidBox;
         private System.Windows.Forms.Button getTemplateButton;
     }
+    //public class currentAdalAuth
+    //{
+    //    public string username { get; set; }
+    //    public string password { get; set; }
+    //}
 }
 
