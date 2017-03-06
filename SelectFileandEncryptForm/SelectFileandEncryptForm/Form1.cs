@@ -162,7 +162,8 @@ namespace SelectFileandEncryptForm
                 });
             });
 
-             templates = SafeNativeMethods.IpcGetTemplateList(null, false, true, false, true, null, null, CredentialInfo);
+            //templates = SafeNativeMethods.IpcGetTemplateList(null, false, false, false, false, null, null, null);
+            templates = SafeNativeMethods.IpcGetTemplateList(null, false, true, false, true, null, null, CredentialInfo);
             if (templates.Count() == 0)
             {
                 MessageBox.Show("Templates did not load. Please check your credentials ");

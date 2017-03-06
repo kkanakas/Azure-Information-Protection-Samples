@@ -178,6 +178,7 @@
             this.Controls.Add(this.templateListBox);
             this.Controls.Add(this.filePath);
             this.Controls.Add(this.exitButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "fileEncrypt";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
@@ -202,10 +203,6 @@
         private System.Windows.Forms.TextBox clientidBox;
         private System.Windows.Forms.Button getTemplateButton;
     }
-    //public class currentAdalAuth
-    //{
-    //    public string username { get; set; }
-    //    public string password { get; set; }
-    //}
+    
 }
 
