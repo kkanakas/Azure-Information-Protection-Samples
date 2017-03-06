@@ -1,6 +1,6 @@
-﻿namespace Adalfileencrypt
+﻿namespace FormFileEncrypt
 {
-    partial class AdalFileEncrypt
+    partial class FormFileEncrypt
     {
         /// <summary>
         /// Required designer variable.

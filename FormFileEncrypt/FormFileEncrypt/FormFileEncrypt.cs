@@ -11,20 +11,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.ObjectModel;
 
-namespace Adalfileencrypt
+namespace FormFileEncrypt
 {
-    public partial class AdalFileEncrypt : Form
+    public partial class FormFileEncrypt : Form
     {
         /* please change these values to run with your 
          * application ID after registering the app in AAD <which is Client ID> and the redirectURI
          * for your application */
-        private static string adalAppID = "7a0987a4-c6fc-4fa5-bedd-571286439708";
-        private static string adalRedirectURI = "https://gyrops.onmicrosoft.com/.auth/login/done";
+        private static string adalAppID = "7a0987a4-c6fc-4fa5-bedd-571286439708"; //change this 
+        private static string adalRedirectURI = "https://gyrops.onmicrosoft.com/.auth/login/done"; //change this
         //private static string storeName = @"%LOCALAPPDATA%\Microsoft\MSIPC\mytestapp";
 
         IpcAadApplicationId currAppId = new IpcAadApplicationId(adalAppID, adalRedirectURI);
         private static Collection<TemplateInfo> templates = null;
-        public AdalFileEncrypt()
+        public FormFileEncrypt()
         {
             InitializeComponent();
             SafeNativeMethods.IpcInitialize();

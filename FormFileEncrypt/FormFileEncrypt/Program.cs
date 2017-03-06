@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Adalfileencrypt
+namespace FormFileEncrypt
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Adalfileencrypt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdalFileEncrypt());
+            Application.Run(new FormFileEncrypt());
         }
     }
 }
