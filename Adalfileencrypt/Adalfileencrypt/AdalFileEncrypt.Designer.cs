@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.getTeamplatesBtn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.filpathBox = new System.Windows.Forms.TextBox();
+            this.templateListBox = new System.Windows.Forms.ComboBox();
+            this.filepathBox = new System.Windows.Forms.TextBox();
             this.selectFileBtn = new System.Windows.Forms.Button();
             this.encryptBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
@@ -38,74 +38,85 @@
             // 
             // getTeamplatesBtn
             // 
-            this.getTeamplatesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getTeamplatesBtn.Location = new System.Drawing.Point(25, 34);
+            this.getTeamplatesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getTeamplatesBtn.Location = new System.Drawing.Point(14, 18);
+            this.getTeamplatesBtn.Margin = new System.Windows.Forms.Padding(2);
             this.getTeamplatesBtn.Name = "getTeamplatesBtn";
-            this.getTeamplatesBtn.Size = new System.Drawing.Size(1111, 116);
+            this.getTeamplatesBtn.Size = new System.Drawing.Size(786, 63);
             this.getTeamplatesBtn.TabIndex = 0;
             this.getTeamplatesBtn.Text = "Get Templates";
             this.getTeamplatesBtn.UseVisualStyleBackColor = true;
             this.getTeamplatesBtn.Click += new System.EventHandler(this.getTeamplatesBtn_Click);
             // 
-            // comboBox1
+            // templateListBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(25, 204);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(1111, 40);
-            this.comboBox1.TabIndex = 1;
+            this.templateListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.templateListBox.FormattingEnabled = true;
+            this.templateListBox.Location = new System.Drawing.Point(14, 101);
+            this.templateListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.templateListBox.Name = "templateListBox";
+            this.templateListBox.Size = new System.Drawing.Size(786, 40);
+            this.templateListBox.TabIndex = 1;
+            this.templateListBox.Text = "Please select Get Templates to populate this list";
             // 
-            // filpathBox
+            // filepathBox
             // 
-            this.filpathBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filpathBox.Location = new System.Drawing.Point(25, 286);
-            this.filpathBox.Name = "filpathBox";
-            this.filpathBox.ReadOnly = true;
-            this.filpathBox.Size = new System.Drawing.Size(839, 39);
-            this.filpathBox.TabIndex = 2;
+            this.filepathBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filepathBox.Location = new System.Drawing.Point(14, 155);
+            this.filepathBox.Margin = new System.Windows.Forms.Padding(2);
+            this.filepathBox.Name = "filepathBox";
+            this.filepathBox.ReadOnly = true;
+            this.filepathBox.Size = new System.Drawing.Size(615, 39);
+            this.filepathBox.TabIndex = 2;
             // 
             // selectFileBtn
             // 
-            this.selectFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectFileBtn.Location = new System.Drawing.Point(904, 263);
+            this.selectFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectFileBtn.Location = new System.Drawing.Point(673, 155);
+            this.selectFileBtn.Margin = new System.Windows.Forms.Padding(2);
             this.selectFileBtn.Name = "selectFileBtn";
-            this.selectFileBtn.Size = new System.Drawing.Size(232, 79);
+            this.selectFileBtn.Size = new System.Drawing.Size(127, 43);
             this.selectFileBtn.TabIndex = 3;
             this.selectFileBtn.Text = "Select File";
             this.selectFileBtn.UseVisualStyleBackColor = true;
+            this.selectFileBtn.Click += new System.EventHandler(this.selectFileBtn_Click);
             // 
             // encryptBtn
             // 
-            this.encryptBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.encryptBtn.Location = new System.Drawing.Point(25, 377);
+            this.encryptBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.encryptBtn.Location = new System.Drawing.Point(14, 204);
+            this.encryptBtn.Margin = new System.Windows.Forms.Padding(2);
             this.encryptBtn.Name = "encryptBtn";
-            this.encryptBtn.Size = new System.Drawing.Size(560, 89);
+            this.encryptBtn.Size = new System.Drawing.Size(424, 48);
             this.encryptBtn.TabIndex = 4;
             this.encryptBtn.Text = "Encrypt";
             this.encryptBtn.UseVisualStyleBackColor = true;
+            this.encryptBtn.Click += new System.EventHandler(this.encryptBtn_Click);
             // 
             // exitBtn
             // 
-            this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(635, 377);
+            this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.Location = new System.Drawing.Point(460, 204);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(2);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(501, 89);
+            this.exitBtn.Size = new System.Drawing.Size(340, 48);
             this.exitBtn.TabIndex = 5;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // AdalFileEncrypt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1181, 563);
+            this.ClientSize = new System.Drawing.Size(817, 304);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.encryptBtn);
             this.Controls.Add(this.selectFileBtn);
-            this.Controls.Add(this.filpathBox);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.filepathBox);
+            this.Controls.Add(this.templateListBox);
             this.Controls.Add(this.getTeamplatesBtn);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdalFileEncrypt";
             this.Text = "Select File and Encrypt";
             this.ResumeLayout(false);
@@ -116,8 +127,8 @@
         #endregion
 
         private System.Windows.Forms.Button getTeamplatesBtn;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox filpathBox;
+        private System.Windows.Forms.ComboBox templateListBox;
+        private System.Windows.Forms.TextBox filepathBox;
         private System.Windows.Forms.Button selectFileBtn;
         private System.Windows.Forms.Button encryptBtn;
         private System.Windows.Forms.Button exitBtn;
