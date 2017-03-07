@@ -20,14 +20,14 @@ namespace FormFileEncrypt
          * for your application */
         private static string adalAppID = "7a0987a4-c6fc-4fa5-bedd-571286439708"; //change this 
         private static string adalRedirectURI = "https://gyrops.onmicrosoft.com/.auth/login/done"; //change this
-        //private static string storeName = @"%LOCALAPPDATA%\Microsoft\MSIPC\mytestapp";
-
+        
         IpcAadApplicationId currAppId = new IpcAadApplicationId(adalAppID, adalRedirectURI);
         private static Collection<TemplateInfo> templates = null;
         public FormFileEncrypt()
         {
             InitializeComponent();
             SafeNativeMethods.IpcInitialize();
+            SafeNativeMethods.IpcSetStoreName("FFE");
             try
             {
                 SafeNativeMethods.IpcSetApplicationId(currAppId);
@@ -43,7 +43,7 @@ namespace FormFileEncrypt
 
             }
 
-         // SafeNativeMethods.IpcSetStoreName(storeName);
+         
 
 
         }
