@@ -49,15 +49,21 @@ namespace AipClpTest1
                 foreach (PSObject result in ps.Invoke())
                 {
 
-                    var resultStrBuilder = new StringBuilder();
-                    foreach (var member in result.Members)
-                    {
-                        if (member.MemberType == PSMemberTypes.Property)
-                            resultStrBuilder.AppendFormat("{0}\t:{1}", member.Name, member.Value).AppendLine();
-                    }
-                    var resultStr = resultStrBuilder.ToString();
-                    Console.WriteLine(resultStr);
-                    Console.WriteLine();
+                    //var resultStrBuilder = new StringBuilder();
+                    Console.WriteLine("File Name: {0}\nIs it Labelled:{1} \n Label Name: {2}", result.Members["FileName"].Value, result.Members["IsLabelled"].Value,result.Members["MainLabelName"].Value);
+                    //foreach (var member in result.Members)
+                    //{
+                    //    if (member.MemberType == PSMemberTypes.Property)
+                        
+                    //        //Console.WriteLine(member.Name.ToString());
+                    //        //Console.WriteLine(member.Value.ToString());
+                    //        resultStrBuilder.AppendFormat("{0}\t:{1}", member.Name, member.Value).AppendLine();
+                      
+                            
+                    //}
+                    //var resultStr = resultStrBuilder.ToString();
+                    //Console.WriteLine(resultStr);
+                    //Console.WriteLine();
 
                 }
             }
