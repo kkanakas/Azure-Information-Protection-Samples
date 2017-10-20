@@ -12,7 +12,7 @@
     <RootNamespace>IpcManagedAPI</RootNamespace>
     <AssemblyName>IpcManagedAPI</AssemblyName>
     <AssemblyProduct>Microsoft AD RMS</AssemblyProduct>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FxCopDisabled>true</FxCopDisabled>
     <CoverageDisabled>True</CoverageDisabled>
@@ -37,7 +37,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\SelectFileandEncryptForm\SelectFileandEncryptForm\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

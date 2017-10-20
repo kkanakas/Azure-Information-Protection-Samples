@@ -37,7 +37,7 @@
             // textBoxDocumentId
             // 
             this.textBoxDocumentId.AllowDrop = true;
-            this.textBoxDocumentId.BackColor = System.Drawing.Color.Black;
+            this.textBoxDocumentId.BackColor = System.Drawing.Color.DimGray;
             this.textBoxDocumentId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDocumentId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.textBoxDocumentId.ForeColor = System.Drawing.Color.White;
@@ -62,8 +62,8 @@
             // textBoxExtendedProperties
             // 
             this.textBoxExtendedProperties.AllowDrop = true;
-            this.textBoxExtendedProperties.BackColor = System.Drawing.Color.Black;
-            this.textBoxExtendedProperties.ForeColor = System.Drawing.Color.White;
+            this.textBoxExtendedProperties.BackColor = System.Drawing.Color.White;
+            this.textBoxExtendedProperties.ForeColor = System.Drawing.Color.Black;
             this.textBoxExtendedProperties.Location = new System.Drawing.Point(12, 114);
             this.textBoxExtendedProperties.Multiline = true;
             this.textBoxExtendedProperties.Name = "textBoxExtendedProperties";
@@ -72,19 +72,19 @@
             this.textBoxExtendedProperties.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form_DragDrop);
             this.textBoxExtendedProperties.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form_DragEnter);
             // 
-            // FormDocumentInspector
+            // FormRmsDocumentInspector
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(785, 523);
             this.Controls.Add(this.textBoxExtendedProperties);
             this.Controls.Add(this.buttonMore);
             this.Controls.Add(this.textBoxDocumentId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormDocumentInspector";
+            this.Name = "FormRmsDocumentInspector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RMS Document Inspector";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form_DragDrop);
